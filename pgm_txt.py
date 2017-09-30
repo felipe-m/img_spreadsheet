@@ -7,12 +7,12 @@ logging.basicConfig(level=logging.DEBUG,
                     
 logger = logging.getLogger(__name__)
 
-def ppm2cvs (filereadname):
+def pgm2txt (filereadname):
 
 
     filewritename = os.path.splitext(filereadname)[0] + ".txt"
     file_out = open(filewritename, 'w')
-    with open(filereadname,'r') as file_ppm:
+    with open(filereadname,'r') as file_pgm:
         line_i = 1
         header = 1
         header_i = 0
@@ -23,7 +23,7 @@ def ppm2cvs (filereadname):
         ncol = 0 # column that is being written to the file
         nline = 0 # line that is being written to the file
         wrtline_l = []
-        for line in file_ppm:
+        for line in file_pgm:
             list_line = line.split()
             for elem in list_line:
                 #print (elem)
